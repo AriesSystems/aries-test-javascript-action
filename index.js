@@ -11,6 +11,8 @@ try {
   const payload = JSON.stringify(github.context.payload, undefined, 2)
   console.log(`The event payload: ${payload}`);
   console.log(github.context.payload.commits[0].message);
+  console.log(github.context.payload.head_commit.message);
+  console.log(github.context.payload.head_commit.author.name);
 } catch (error) {
   core.setFailed(error.message);
 }
